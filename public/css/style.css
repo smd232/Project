@@ -1,0 +1,251 @@
+body {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+
+
+/* Navbar */
+
+.navbar {
+    height: 5rem;
+    background-color: white;
+}
+
+.fa-compass {
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: #222222 !important;
+}
+
+
+/* Footer */
+
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info-links,
+.f-info-brand,
+.f-info-socials {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.f-info-socials i {
+    font-size: 1.3rem;
+    margin-right: 1rem;
+}
+
+.f-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+    text-align: center;
+    height: 8rem;
+    background-color: #ebebeb;
+}
+
+
+/* Cards */
+
+.listing-card {
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top {
+    width: 100% !important;
+    object-fit: cover !important;
+    border-radius: 1rem !important;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.card-text p {
+    font-weight: 400 !important;
+}
+
+.listing-link {
+    text-decoration: none;
+}
+
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover {
+    opacity: 0.2;
+    background-color: white;
+}
+
+
+/* Buttons */
+
+.add-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+
+/* New Page */
+
+.edit-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+h3 {
+    margin-top: 20px !important;
+}
+
+
+/* Show Page */
+
+.show_img {
+    height: 30vh;
+}
+
+.btns {
+    display: flex;
+    margin-bottom: 55px;
+}
+
+.show-card {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* =========================
+   Review Section
+   ========================= */
+
+.review-heading {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #1f2937;
+}
+
+
+/* Reviews Heading */
+
+.reviews-heading {
+    text-align: center;
+    margin: 30px 0 35px;
+}
+
+.reviews-heading h3 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.reviews-heading p {
+    color: #777;
+    margin-bottom: 18px;
+}
+
+
+/* Heart Divider */
+
+.heart-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.heart-divider span {
+    width: 90px;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.heart-divider i {
+    font-size: 22px;
+    color: #aaa;
+    font-style: normal;
+}
+
+
+/* Review Form */
+
+.review-form {
+    max-width: 550px;
+    margin-bottom: 50px;
+}
+
+.review-form textarea {
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.review-form textarea:focus {
+    border-color: #9ca3af;
+    box-shadow: none;
+}
+
+
+/* Review Cards */
+
+.reviews {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.review-card {
+    width: 260px;
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background-color: white;
+}
+
+
+/* Review Text */
+
+.review-user {
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 5px;
+}
+
+.review-comment {
+    color: #4b5563;
+    line-height: 1.6;
+    margin: 8px 0 18px;
+}
+
+
+/* Delete Button */
+
+.delete-btn {
+    padding: 8px 22px;
+    margin-top: 5px;
+    border-radius: 6px;
+}
+
+#map {
+    height: 400px;
+    width: 100vh;
+}
