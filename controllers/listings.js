@@ -15,6 +15,26 @@ module.exports.newListing = (req, res) => {
     res.render("listings/new.ejs");
 };
 
+//search route
+module.exports.searchlistings = (req, res) => {
+    const { q } = req.query;
+
+    if (!q || q.trim() === "") {
+        req.flash("error", "Please type somehing to search");
+        res.redirect("/listings");
+    }
+
+    const Listings = await Listing.find({
+        $or: [
+            { title: { $regex: q, $options: "i" } },
+            { location: { $regex: q, $options: "i" } },
+            { country: { $regex: q, $options: "i" } },
+        ]
+    });
+
+    
+}
+
 //show route
 module.exports.showListing = async (req, res) => {
     let { id } = req.params;
