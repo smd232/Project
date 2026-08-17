@@ -32,7 +32,7 @@ module.exports.searchlistings = (req, res) => {
         ]
     });
 
-    
+    res.render("listings/index.ejs", { allListings: listings, query: q });
 }
 
 //show route
