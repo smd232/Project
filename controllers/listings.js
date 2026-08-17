@@ -16,15 +16,16 @@ module.exports.newListing = (req, res) => {
 };
 
 //search route
-module.exports.searchlistings = (req, res) => {
-    const { q } = req.query;
+module.exports.searchListings = async (req, res) => {
+    const q = req.query.q?.trim();
 
-    if (!q || q.trim() === "") {
+
+    if (!q || q === "") {
         req.flash("error", "Please type somehing to search");
-        res.redirect("/listings");
+        return res.redirect("/listings");
     }
 
-    const Listings = await Listing.find({
+    const listings = await Listing.find({
         $or: [
             { title: { $regex: q, $options: "i" } },
             { location: { $regex: q, $options: "i" } },
