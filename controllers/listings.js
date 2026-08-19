@@ -56,8 +56,14 @@ module.exports.showListing = async (req, res) => {
         req.flash("error", "Listing you requested for does not exist!");
         return res.redirect("/listings");
     }
+
+    let avgRating = 0;
+    if (listing.reviews.length > 0) {
+        let total = listing.reviews.reduce((sum, review) => sum + review.rating, 0);
+        avgRating = total / listing.reviews.length;
+    }
     console.log(listing);
-    res.render("listings/show.ejs", { listing });
+    res.render("listings/show.ejs", { listing, avgRating });
 };
 
 //create route
