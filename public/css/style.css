@@ -43,6 +43,13 @@ body {
     padding: 0 !important;
 }
 
+.card-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #4b5563;
+    margin-bottom: 1rem;
+}
+
 .card-text p {
     font-weight: 400 !important;
 }
@@ -83,12 +90,9 @@ h3 {
 
 /* Show Page */
 
-.show_img {
-    height: 30vh;
-}
-
 .btns {
     display: flex;
+    gap: 0.75rem;
     margin-bottom: 55px;
 }
 
@@ -111,7 +115,7 @@ h3 {
 /* Reviews Heading */
 
 .reviews-heading {
-    text-align: center;
+    text-align: left;
     margin: 30px 0 35px;
 }
 
@@ -123,28 +127,6 @@ h3 {
 .reviews-heading p {
     color: #777;
     margin-bottom: 18px;
-}
-
-
-/* Heart Divider */
-
-.heart-divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-}
-
-.heart-divider span {
-    width: 90px;
-    height: 1px;
-    background-color: #ddd;
-}
-
-.heart-divider i {
-    font-size: 22px;
-    color: #aaa;
-    font-style: normal;
 }
 
 
