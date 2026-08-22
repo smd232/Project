@@ -175,6 +175,51 @@
             color: #1f2937;
             margin: 0;
         }
+
+        @media (max-width: 480px) {
+            .guest-favorite-card {
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+                padding: 1rem 1.25rem;
+                max-width: 100%;
+                width: 90%;
+            }
+
+            .gf-text {
+                flex: 1 1 100%;
+                order: 1;
+            }
+
+            .gf-icon {
+                order: 0;
+            }
+
+            .gf-divider {
+                display: none;
+            }
+
+            .gf-rating {
+                order: 2;
+                flex: 1 1 100%;
+                text-align: center;
+            }
+
+            .gf-rating .starability-result {
+                margin: 0 auto;
+            }
+
+            .review-card {
+                width: 100% !important;
+                margin-left: 0 !important;
+            }
+
+            /* #location {
+                width: 100% !important;
+                margin-left: 0 !important;
+                max-width: 100%;
+            } */
+        }
     </style>
 
     <div class="row mt-3">
@@ -254,103 +299,103 @@
                     <span class="gf-icon"><i class="fa-solid fa-award"></i></span>
                 </div>
                 <% } %>
-                <br><br>
+                    <br><br>
 
                     <% if(currUser) { %>
                         <div class="reviews-heading">
                             <h3>What travelers are saying</h3>
                             <p>Real experiences from people who explored with Wanderlust.</p>
 
-                        <form action="/listings/<%= listing._id %>/reviews" method="POST" novalidate
-                            class="needs-validation">
+                            <form action="/listings/<%= listing._id %>/reviews" method="POST" novalidate
+                                class="needs-validation">
 
-                            <div class="mb-3 mt-3">
-                                <label for="rating" class="form-label">Rating</label>
+                                <div class="mb-3 mt-5">
+                                    <label for="rating" class="form-label">Rating</label>
 
-                                <fieldset class="starability-slot">
-                                    <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]"
-                                        value="3" checked />
+                                    <fieldset class="starability-slot">
+                                        <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]"
+                                            value="3" checked />
 
-                                    <input type="radio" id="first-rate1" name="review[rating]" value="1" />
-                                    <label for="first-rate1" title="Terrible">1 star</label>
+                                        <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+                                        <label for="first-rate1" title="Terrible">1 star</label>
 
-                                    <input type="radio" id="first-rate2" name="review[rating]" value="2" />
-                                    <label for="first-rate2" title="Not good">2 stars</label>
+                                        <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+                                        <label for="first-rate2" title="Not good">2 stars</label>
 
-                                    <input type="radio" id="first-rate3" name="review[rating]" value="3" />
-                                    <label for="first-rate3" title="Average">3 stars</label>
+                                        <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+                                        <label for="first-rate3" title="Average">3 stars</label>
 
-                                    <input type="radio" id="first-rate4" name="review[rating]" value="4" />
-                                    <label for="first-rate4" title="Very good">4 stars</label>
+                                        <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+                                        <label for="first-rate4" title="Very good">4 stars</label>
 
-                                    <input type="radio" id="first-rate5" name="review[rating]" value="5" />
-                                    <label for="first-rate5" title="Amazing">5 stars</label>
-                                </fieldset>
-                            </div>
-
-                            <div class="mt-3 mb-3">
-                                <label for="comment" class="form-label">Comments</label>
-
-                                <textarea class="form-control" id="comment" name="review[comment]" rows="3"
-                                    required></textarea>
-
-                                <div class="invalid-feedback">
-                                    Please provide a comment.
+                                        <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+                                        <label for="first-rate5" title="Amazing">5 stars</label>
+                                    </fieldset>
                                 </div>
-                            </div>
 
-                            <button type="submit" class="btn btn-outline-dark">
-                                Submit Review
-                            </button>
-                        </form>
-                        <hr>
-                        <% } %>
+                                <div class="mt-3 mb-3">
+                                    <label for="comment" class="form-label">Comments</label>
 
-                            <br>
+                                    <textarea class="form-control" id="comment" name="review[comment]" rows="3"
+                                        required></textarea>
 
-                            <% if(listing.reviews.length> 0) { %>
-                                <p><b>All reviews</b></p>
+                                    <div class="invalid-feedback">
+                                        Please provide a comment.
+                                    </div>
+                                </div>
 
-                                <div class="row">
-                                    <% for(review of listing.reviews) { %>
+                                <button type="submit" class="btn btn-outline-dark mb-3">
+                                    Submit Review
+                                </button>
+                            </form>
+                            <hr>
+                            <% } %>
 
-                                        <div class="card col-5 ms-3 mb-3 review-card">
-                                            <div class="card-body">
+                                <br>
 
-                                                <h5 class="card-title">
-                                                    @<%= review.author.username %>
-                                                </h5>
+                                <% if(listing.reviews.length> 0) { %>
+                                    <p><b>All reviews</b></p>
 
-                                                <p class="starability-result card-text"
-                                                    data-rating="<%= review.rating %>">
-                                                </p>
+                                    <div class="row">
+                                        <% for(review of listing.reviews) { %>
 
-                                                <p class="card-text review-comment">
-                                                    "<%= review.comment %>"
-                                                </p>
+                                            <div class="card col-5 ms-3 mb-3 review-card">
+                                                <div class="card-body">
 
-                                                <form
-                                                    action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE"
-                                                    method="POST">
+                                                    <h5 class="card-title">
+                                                        @<%= review.author.username %>
+                                                    </h5>
 
-                                                    <% if (currUser && currUser._id.equals(review.author._id)) { %>
-                                                        <button class="btn btn-sm btn-dark delete-btn">
-                                                            Delete
-                                                        </button>
-                                                        <% } %>
-                                                </form>
+                                                    <p class="starability-result card-text"
+                                                        data-rating="<%= review.rating %>">
+                                                    </p>
+
+                                                    <p class="card-text review-comment">
+                                                        "<%= review.comment %>"
+                                                    </p>
+
+                                                    <form
+                                                        action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE"
+                                                        method="POST">
+
+                                                        <% if (currUser && currUser._id.equals(review.author._id)) { %>
+                                                            <button class="btn btn-sm btn-dark delete-btn">
+                                                                Delete
+                                                            </button>
+                                                            <% } %>
+                                                    </form>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <% } %>
-                                </div>
-                                <% } %>
+                                            <% } %>
+                                    </div>
+                                    <% } %>
+                        </div>
+                        <div class="mb-3" id="location">
+                            <h3>Where you'll be</h3>
+                            <div id="map"></div>
+                        </div>
         </div>
-        <div class="col-6 offset-1 mb-3" id="location">
-            <h3>Where you'll be</h3>
-            <div id="map"></div>
-        </div>
-    </div>
     </div>
     <script>
         const mapToken = "<%= process.env.MAP_TOKEN %>";
